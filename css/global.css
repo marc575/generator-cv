@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #fff;
+    scrollbar-base-color: #3498db; /* Couleur de base de la barre de défilement */
+    scrollbar-face-color: #fff; /* Couleur de la poignée */
+    scrollbar-3dlight-color: #3498db; /* Couleur de la lumière 3D */
+    scrollbar-highlight-color: #3498db; /* Couleur de surbrillance */
+    scrollbar-shadow-color: #fff; /* Couleur de l'ombre */
+    scrollbar-darkshadow-color: #3498db; /* Couleur de l'ombre sombre */
+    scrollbar-arrow-color: #3498db; /* Couleur des flèches */
+}
+
+body {
+    font-family: roboto, poppins, montserrat;
+}
+
+.is-invalid {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+input::placeholder, textarea::placeholder {
+    font-size: 14px;
+}
+
+/* Thème Classique */
+.theme-classic {
+    font-family: Roboto, sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
+.theme-classic .information {
+    background-color: #242424;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.theme-classic .experience {
+    background-color: #fff;
+    color: #aaa;
+    padding: 2rem 0;
+}
+
+.theme-classic .information h2, .theme-classic .information h3,
+ .theme-classic .experience h2, .theme-classic .experience h3,
+ .theme-classic .experience i {
+    color: #242424;
+}
+
+.theme-classic .information .h2 {
+    text-align: center;
+}
+
+/* Thème Moderne */
+.theme-modern {
+    font-family: Poppins, sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
+.theme-modern .information {
+    background-color: #008d6d;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.theme-modern .experience {
+    background-color: #fff;
+    color: #9e9e9e;
+    padding: 2rem 0;
+}
+
+.theme-modern .information h2, .theme-modern .information h3,
+ .theme-modern .experience h2, .theme-modern .experience h3, 
+ .theme-modern .experience i {
+    color: #008d6d;
+}
+
+.theme-modern .information .h2 {
+    text-align: center;
+}
+
+/* Thème Minimaliste */
+.theme-minimalist {
+    font-family: Montserrat, serif;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
+.theme-minimalist .information {
+    background-color: #204f57;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.theme-minimalist .experience {
+    background-color: #fff;
+    color: #aaa;
+    padding: 2rem 0;
+}
+
+.theme-minimalist .information h2, .theme-minimalist .information h3,
+ .theme-minimalist .experience h2, .theme-minimalist .experience h3,
+ .theme-minimalist .experience i {
+    color: #204f57;
+}
+
+.theme-minimalist .information .h2 {
+    text-align: center;
+}

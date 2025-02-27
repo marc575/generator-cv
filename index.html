@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Generator</title>
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css/global.css"> 
+</head>
+<body class="max-h-screen">
+    <header class="bg-[#242424] md:text-white">
+        <nav class="navbar container mx-auto">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn rounded-xl btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li>
+                    <a>Accueil</a>
+                  </li>
+                  <li>
+                    <a>FAQs</a>
+                  </li>
+                  <li>
+                    <a>Contactez-nous</a>
+                  </li>
+                </ul>
+              </div>
+              <a class=""><img src="./assets/logo.png" class="rounded-3xl" width="50" alt=""></a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li>
+                    <a>Accueil</a>
+                </li>
+                <li>
+                    <a>FAQs</a>
+                </li>
+                <li>
+                    <a>Contactez-nous</a>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="btn rounded-xl btn-primary">Créer un CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto py-10 relative px-5">
+        <div class="flex flex-col md:flex-row gap-10">
+            <div class="w-full md:w-1/2 md:max-h-screen md:overflow-scroll">
+                <!-- Formulaire ici -->
+                <form id="cv-form" class="flex-col">
+                    <select value="" id="theme-selector" title="theme-selector" class="mt-1 mb-5 block w-full p-2 border border-gray-300 rounded-xl">
+                        <option value="theme-classic">Thème Classique</option>
+                        <option value="theme-modern">Thème Moderne</option>
+                        <option value="theme-minimalist">Thème Minimaliste</option>
+                    </select>
+
+                    <!-- Informations Personnelles -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Informations Personnelles</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Nom Complet</label>
+                                        <input type="text" id="full-name" name="full-name" placeholder="Nom complet..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Titre du Poste</label>
+                                        <input type="text" id="job-title" name="job-title" placeholder="Poste..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Email..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="Téléphone..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Âge</label>
+                                        <input type="number" id="age" name="age" min="18" max="65" placeholder="Âge..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Sexe</label>
+                                        <select id="gender" title="gender" id="gender" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            <option value=""></option>
+                                            <option value="Homme">Homme</option>
+                                            <option value="Femme">Femme</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Situation Actuelle</label>
+                                        <input type="text" id="current-situation" name="current-situation" placeholder="Situation actuelle..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Adresse</label>
+                                        <input type="text" id="address" name="address" placeholder="Adresse..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required>
+                                    </div>
+                                </div>
+                                <div class="my-5">
+                                    <label class="block text-sm font-medium text-gray-700">Photo de Profil</label>
+                                    <input type="file" id="profile-picture" name="profile-picture" placeholder="Photo de profil..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                </div>
+                                <div class="my-5">
+                                    <label class="block text-sm font-medium text-gray-700">Résumé professionnel</label>
+                                    <textarea rows="5" id="summary" name="summary" placeholder="Description..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl" required></textarea>
+                                </div>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+
+                    <!-- Expériences Professionnelles -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Expériences Professionnelles</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="experiences">
+                                    <div class="experience mb-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Nom de l'Entreprise</label>
+                                                <input type="text" name="company-name" id="company-name" placeholder="Entreprise..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Poste Occupé</label>
+                                                <input type="text" name="job-position" id="job-position" placeholder="Poste..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Début</label>
+                                                <input type="date" name="date-job-begin" id="date-job-begin" placeholder="Durée..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Fin</label>
+                                                <input type="date" name="date-job-end" id="date-job-end" placeholder="Durée..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                        </div>
+                                        <div class="my-5">
+                                            <label class="block text-sm font-medium text-gray-700">Description des Missions</label>
+                                            <textarea rows="5" name="job-mission" id="job-mission"placeholder="Description des missions..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl"></textarea>
+                                        </div>
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeExperience(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addExperience()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter une Expérience</button>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Formation -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Formations</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="educations">
+                                    <div class="education mb-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Diplôme Obtenu</label>
+                                                <input type="text" name="degree" id="degree" placeholder="Diplome..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Établissement</label>
+                                                <input type="text" name="institution" id="institution" placeholder="Etablissement..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Année d'Obtention</label>
+                                                <input type="date" name="year" id="year" placeholder="Année..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeEducation(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addEducation()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter une Formation</button>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+
+                    <!-- Compétences -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Compétences</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="skills">
+                                    <div class="skill mb-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Compétence</label>
+                                                <input type="text" name="skill-name" id="skill-name" placeholder="Compétence..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Niveau de Maîtrise</label>
+                                                <select name="skill-level" title="skill-level" id="skill-level" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                                    <option value=""></option>
+                                                    <option value="Débutant">Débutant</option>
+                                                    <option value="Intermédiaire">Intermédiaire</option>
+                                                    <option value="Avancé">Avancé</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeSkill(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addSkill()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter une Compétence</button>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+
+                    <!-- Centres d'Intérêt -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Centres d'Intérêt</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="interests">
+                                    <div class="interest mb-4">
+                                        <input type="text" name="interest" id="interest" placeholder="Intéret..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeInterest(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addInterest()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter un Centre d'Intérêt</button>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+
+                    <!-- Références -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Références</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="references">
+                                    <div class="reference mb-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Nom</label>
+                                                <input type="text" name="reference-name" id="reference-name" placeholder="Nom..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Poste</label>
+                                                <input type="text" name="reference-position" id="reference-position" placeholder="Poste.." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Email</label>
+                                                <input type="email" name="reference-email" id="reference-email" placeholder="Email..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+                                                <input type="tel" name="reference-phone" id="reference-phone" placeholder="Téléphone..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeReference(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addReference()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter une Référence</button>
+                            
+                            </div>
+                        </details>
+                    </section>
+
+
+                    <!-- Langues -->
+                    <section class="mb-5">
+                        <details class="collapse border-2">
+                            <summary class="collapse-title">
+                                <div class="flex justify-between items-center"><span class="text-xl font-semibold">Langues</span> <i class="fas fa-plus"></i></div>
+                            </summary>
+                            <div class="collapse-content">
+                                <div id="languages">
+                                    <div class="language mb-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Langue</label>
+                                                <input type="text" name="language-name" id="language-name" placeholder="Langue..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700">Niveau de Compétence</label>
+                                                <select name="language-level" title="language-level" id="language-level" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                                                    <option value=""></option>
+                                                    <option value="Débutant">Débutant</option>
+                                                    <option value="Intermédiaire">Intermédiaire</option>
+                                                    <option value="Avancé">Avancé</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeLanguage(this)">Supprimer</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addLanguage()" class="mt-4 bg-[#242424] text-white px-5 py-1 rounded-xl">Ajouter une Langue</button>        
+                            </div>
+                        </details>
+                    </section>
+                    
+                    <div class="flex justify-between gap-2">
+                        <button type="submit" class="bg-green-500 text-white px-10 py-2 rounded-xl w-full">Générer le CV</button>
+                        <button type="button" onclick="deleteData()" class="border-red-500 border-2 text-red-500 px-10 py-2 rounded-xl w-full">Supprimer le CV</button>
+                    </div>
+                </form>
+            </div>
+            <div class="w-full md:w-1/2">
+                <!-- Prévisualisation ici -->
+                <div id="cv-preview" class="theme-classic">
+                    <div class="information space-y-4">
+                        <div class="space-y-2">
+                            <img id="preview-profil" src="#" alt="Prévisualisation de la photo de profil" class="mt-2 w-24 h-24 rounded-full object-cover mx-auto hidden">
+                            <h1 id="preview-name" class="text-md font-bold uppercase text-center"></h1>
+                            <h4 id="preview-job-title" class="text-sm font-medium uppercase text-center"></h4>
+                            <p id="preview-current-situation" class="text-sm font-medium uppercase text-center"></p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h2 class="h2 bg-white ml-5 uppercase font-medium rounded-l-3xl my-5 py-2">Contact</h2>
+                            <p id="preview-gender" class="text-sm font-medium uppercase ml-10"></p>
+                            <p id="preview-age" class="text-sm font-medium uppercase ml-10"></p>
+                            <p id="preview-phone" class="text-sm ml-10 flex items-center gap-2"></p>
+                            <p id="preview-email" class="text-sm ml-10 flex items-center gap-2"></p>
+                            <p id="preview-address" class="text-sm ml-10 flex items-center gap-2"></p>
+                        </div>
+
+                        <div id="preview-skills"  class="space-y-2">
+                            <h2 class="h2 bg-white ml-5 uppercase font-medium rounded-l-3xl my-5 py-2">Compétences</h2>
+                            <ul class="text-sm ml-10 space-y-2 mr-2">
+                                <!-- liste des compétences -->
+                            </ul>
+                        </div>
+
+                        <div id="preview-languages" class="space-y-2">
+                            <h2 class="h2 bg-white ml-5 uppercase font-medium rounded-l-3xl my-5 py-2">Langues</h2>
+                            <ul class="text-sm ml-10 space-y-2 mr-2">
+                                <!-- liste des langues -->
+                            </ul>
+                        </div>
+
+                        <div id="preview-interests" class="space-y-2">
+                            <h2 class="h2 bg-white ml-5 uppercase font-medium rounded-l-3xl my-5 py-2">Centres d'intéret</h2>
+                            <div class="text-sm ml-10">
+                                <!-- liste des centres d'intérêt -->
+                            </div>
+                        </div>
+                        <!-- Ajouter la suite ici -->
+                    </div>
+                    <div class="experience space-y-4">
+                        <div class="space-y-2">
+                            <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">Profil</h2>
+                            <p id="preview-summary" class="text-xs"></p>
+                        </div>
+
+                        <div id="preview-experiences" class="space-y-2">
+                            <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">Expériences professionnelles</h2>
+                            <ul class="space-y-4">
+                                <!-- liste des expériences professionnelles -->
+                            </ul>
+                        </div>
+
+                        <div id="preview-educations" class="space-y-2">
+                            <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">Formations</h2>
+                            <ul class="space-y-4">
+                                <!-- liste des formations -->
+                            </ul>
+                        </div>
+
+                        <div id="preview-references"class="space-y-2">
+                            <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">Références</h2>
+                            <ul class="grid grid-cols-2 gap-2">
+                                <!-- liste des références -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-center bg-[#242424] text-white p-4">
+        <aside>
+          <p>Copyright © 2025 - Tous droits reservés WebNova !</p>
+        </aside>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="./js/validator.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
