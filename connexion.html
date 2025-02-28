@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <title>Prix</title>
+    <title>Connexion</title>
 </head>
-<body >
+<body>
     <header class="flex justify-between items-center pt-1 bg-white px-20">
         <div>
             <img src="./assets/logo.jpg" alt="" class="w-24 h-16">
         </div>
         <div>
             <ul class="flex justify-center gap-10 font-semibold">
-                <li> <a href="./index.html"> Modele gratuit </a> </li> 
-                <li> <a href="./prix.html"> Prix </a></li> 
-                <li> <a href=""> FAQ </a> </li> 
+                <li> <a href="./index.html"> </a>Modele gratuit </a> </li> 
+                <li> <a href="./prix.html"> </a>Prix </a></li> 
+                <li> <a href=""></a> FAQ </a> </li> 
             </ul>
         </div>
         <div class="flex justify-center gap-6">
@@ -25,28 +25,19 @@
     </header>
     <main class="bg-gray-100 flex items-center justify-center h-screen">
         <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-            <h1 class="text-2xl font-bold text-center mb-4">Prix</h1>
-            <p class="text-center text-gray-600 mb-6">Un prix unique, toutes les fonctionnalités, en illimité.</p>
-            <div class="border-t border-b py-6">
-                <div class="text-center mb-4">
-                    <label for="duration" class="block text-xl font-semibold mb-2">Choisissez votre durée</label>
-                    <select id="duration" class="block w-full p-2 border border-gray-300 rounded-lg">
-                        <option value="monthly">Mensuel - 5000 Fcfa / mois</option>
-                        <option value="quarterly">Trimestriel - 12000 Fcfa / trimestre</option>
-                        <option value="annual">Annuel - 12000 Fcfa / an</option>
-                    </select>
+            <h1 class="text-2xl font-bold text-center mb-6">Connexion</h1>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                 </div>
-                <p class="text-center text-gray-600 mb-4">(renouvellement automatique)</p>
-                <div class="text-center mb-6">
-                    <span class="bg-blue-500 text-white px-4 py-2 rounded-full">Essayez 14 jours pour 500 Fcfa</span>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
                 </div>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li class="mb-2">Créez des CV en illimité</li>
-                    <li class="mb-2">Générez des lettres de motivation</li>
-                    <li class="mb-2">Alertes pour les offres d'emplois</li>
-                    <li class="mb-2">Suivez vos candidatures</li>
-                </ul>
-            </div>
+                <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Se connecter</button>
+            </form>
+            <p class="text-center text-gray-600 mt-4">Pas encore de compte ? <a href="#" class="text-blue-500 hover:underline">Inscrivez-vous</a></p>
         </div>
     </main>
     <footer class="bg-white">
@@ -86,21 +77,17 @@
     </footer>
 
     <script>
-        document.getElementById('duration').addEventListener('change', function() {
-            const selectedOption = this.value;
-            let priceText = '';
-            switch (selectedOption) {
-                case 'monthly':
-                    priceText = '14,99 US$ / mois';
-                    break;
-                case 'quarterly':
-                    priceText = '39,99 US$ / trimestre';
-                    break;
-                case 'annual':
-                    priceText = '149,99 US$ / an';
-                    break;
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert('Connexion réussie !');
+                // Vous pouvez ajouter ici la logique pour rediriger l'utilisateur ou envoyer les données au serveur
+            } else {
+                alert('Veuillez remplir tous les champs.');
             }
-            this.options[this.selectedIndex].text = priceText;
         });
     </script>
 </body>
