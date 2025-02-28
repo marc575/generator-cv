@@ -50,6 +50,12 @@ input::placeholder, textarea::placeholder {
     gap: 2rem;
 }
 
+#modele-pro {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
 /* Thème Classique */
 .theme-classic {
     font-family: Roboto, sans-serif;
@@ -58,14 +64,14 @@ input::placeholder, textarea::placeholder {
 .theme-classic .information {
     background-color: #242424;
     color: #fff;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     border-radius: 2px;
 }
 
 .theme-classic .experience {
     background-color: #fff;
     color: #aaa;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .theme-classic .information h2, .theme-classic .information h3,
@@ -83,14 +89,14 @@ input::placeholder, textarea::placeholder {
 .theme-modern .information {
     background-color: #008d6d;
     color: #fff;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     border-radius: 2px;
 }
 
 .theme-modern .experience {
     background-color: #fff;
     color: #9e9e9e;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .theme-modern .information h2, .theme-modern .information h3,
@@ -111,14 +117,14 @@ input::placeholder, textarea::placeholder {
 .theme-minimalist .information {
     background-color: #204f57;
     color: #fff;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     border-radius: 2px;
 }
 
 .theme-minimalist .experience {
     background-color: #fff;
     color: #aaa;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .theme-minimalist .information h2, .theme-minimalist .information h3,

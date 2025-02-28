@@ -178,11 +178,11 @@ function updatePreviewReferences() {
         const referenceEmail = $(this).find('input[name="reference-email"]').val();
         const referencePhone = $(this).find('input[name="reference-phone"]').val();
         referenceName ? references.push(`
-            <li class="space-y-1">
+            <li class="space-y-2">
                 <h3 class="text-md font-medium">${referenceName}</h3>
-                <p class="text-md">${referencePosition}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:5px; width:15px;" /> ${referenceEmail}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:5px; width:15px;" /> ${referencePhone}</p>
+                <p class="text-xs">${referencePosition}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:5px; width:12px;" /> ${referenceEmail}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:5px; width:12px;" /> ${referencePhone}</p>
             </li>
         `): null;
     });
@@ -355,6 +355,15 @@ $(document).ready(function () {
         const modeleClassic = $('#modele-classic');
         modeleClassic.removeClass(); // Réinitialise les classes
         modeleClassic.addClass($(this).val()); // Applique le nouveau thème
+
+        const modelePro = $('#modele-pro');
+        modelePro.removeClass(); // Réinitialise les classes
+        modelePro.addClass($(this).val()); // Applique le nouveau thème
+
+        
+        const modelePremium = $('#modele-premium');
+        modelePremium.removeClass(); // Réinitialise les classes
+        modelePremium.addClass($(this).val()); // Applique le nouveau thème
     });
 
     function previewData() {
@@ -364,21 +373,21 @@ $(document).ready(function () {
         
         if ($('.email').val()) {
             $('.preview-email').removeClass('hidden');
-            $('.preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.email').val()}`);
+            $('.preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.email').val()}`);
         } else {
             $('.preview-email').addClass('hidden');
         }
         
         if ($('.phone').val()) {
             $('.preview-phone').removeClass('hidden');
-            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.phone').val()}`)
+            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.phone').val()}`)
         } else {
             $('.preview-phone').addClass('hidden');
         }
         
         if ($('.address').val()) {
             $('.preview-address').removeClass('hidden');
-            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.phone').val()}`)
+            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.phone').val()}`)
         } else {
             $('.preview-address').addClass('hidden');
         }
