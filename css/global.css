@@ -44,18 +44,22 @@ input::placeholder, textarea::placeholder {
     font-size: 14px;
 }
 
-/* Thème Classique */
-.theme-classic {
-    font-family: Roboto, sans-serif;
+#modele-classic {
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 2rem;
+}
+
+/* Thème Classique */
+.theme-classic {
+    font-family: Roboto, sans-serif;
 }
 
 .theme-classic .information {
     background-color: #242424;
     color: #fff;
     padding: 2rem 0;
+    border-radius: 2px;
 }
 
 .theme-classic .experience {
@@ -70,22 +74,17 @@ input::placeholder, textarea::placeholder {
     color: #242424;
 }
 
-.theme-classic .information .h2 {
-    text-align: center;
-}
 
 /* Thème Moderne */
 .theme-modern {
     font-family: Poppins, sans-serif;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 2rem;
 }
 
 .theme-modern .information {
     background-color: #008d6d;
     color: #fff;
     padding: 2rem 0;
+    border-radius: 2px;
 }
 
 .theme-modern .experience {
@@ -107,15 +106,13 @@ input::placeholder, textarea::placeholder {
 /* Thème Minimaliste */
 .theme-minimalist {
     font-family: Montserrat, serif;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 2rem;
 }
 
 .theme-minimalist .information {
     background-color: #204f57;
     color: #fff;
     padding: 2rem 0;
+    border-radius: 2px;
 }
 
 .theme-minimalist .experience {

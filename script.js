@@ -6,19 +6,19 @@ function addExperience() {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Nom de l'Entreprise</label>
-                    <input type="text" name="company-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="company-name" class="company-name mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Poste Occupé</label>
-                    <input type="text" name="job-position" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="job-position" class="job-position mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Début</label>
-                    <input type="date" name="date-job-begin" id="date-job-begin" placeholder="Durée..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="date" name="date-job-begin" placeholder="Durée..." class="date-job-begin mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Fin</label>
-                    <input type="date" name="date-job-end" id="date-job-end" placeholder="Durée..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="date" name="date-job-end" placeholder="Durée..." class="date-job-end mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
             </div>
             <div class="my-5">
@@ -45,14 +45,18 @@ function updatePreviewExperiences() {
         const jobMission = $(this).find('textarea[name="job-mission"]').val();
 
         let dateJobBegin = $(this).find('input[name="date-job-begin"]').val();
-        dateJobBegin = new Date(dateJobBegin);
-        dateJobBegin = `${dateJobBegin.getMonth() + 1} / ${dateJobBegin.getFullYear()}`;
+        if (dateJobBegin) {
+            dateJobBegin = new Date(dateJobBegin);
+            dateJobBegin = `${dateJobBegin.getMonth() + 1} / ${dateJobBegin.getFullYear()}`;
+        }
 
         let dateJobEnd = $(this).find('input[name="date-job-end"]').val();
-        dateJobEnd = new Date(dateJobEnd);
-        dateJobEnd = `${dateJobEnd.getMonth() + 1} / ${dateJobEnd.getFullYear()}`;
+        if (dateJobEnd) {
+            dateJobEnd = new Date(dateJobEnd);
+            dateJobEnd = `${(dateJobEnd.getMonth()) + 1} / ${dateJobEnd.getFullYear()}`;
+        }
         
-        experiences.push(`
+        companyName ? experiences.push(`
             <li class="space-y-1">
                 <p class="flex justify-between gap-2 text-xs">
                     <span class="font-medium">${companyName}</span> <span class="text-gray-400">${dateJobBegin} - ${dateJobEnd}</span>
@@ -60,10 +64,10 @@ function updatePreviewExperiences() {
                 <h3 class="text-md font-medium">${jobPosition}</h3>
                 <p class="text-xs">${jobMission}</p>
             </li>
-        `);
+        `) : null;
     });
 
-    const previewList = $('#preview-experiences ul');
+    const previewList = $('.preview-experiences ul');
     previewList.empty();
     experiences.forEach(experience => {
         previewList.append(`${experience}`);
@@ -78,15 +82,15 @@ function addEducation() {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Diplôme Obtenu</label>
-                    <input type="text" name="degree" id="degree" placeholder="Diplome..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="degree" placeholder="Diplome..." class="degree mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Établissement</label>
-                    <input type="text" name="institution" id="institution" placeholder="Etablissement..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="institution" placeholder="Etablissement..." class="institution mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Année d'Obtention</label>
-                    <input type="date" name="year" id="year" placeholder="Année d'obtention..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="date" name="year" placeholder="Année d'obtention..." class="year mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
             </div>
             <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeEducation(this)">Supprimer</button>
@@ -108,19 +112,22 @@ function updatePreviewEducations() {
         const degree = $(this).find('input[name="degree"]').val();
         const institution = $(this).find('input[name="institution"]').val();
         let year = $(this).find('input[name="year"]').val();
-        year = new Date(year);
-        year = `${year.getMonth() + 1} / ${year.getFullYear()}`;
-        educations.push(`
+        if (year) {
+            year = new Date(year);
+            year = `${year.getMonth() + 1} / ${year.getFullYear()}`;
+        }
+        
+        degree ? educations.push(`
             <li class="space-y-1">
                 <h3 class="flex justify-between gap-2">
                     <span class="font-medium text-md">${degree}</span> <span class="text-gray-400 text-xs">${year}</span>
                 </h3>
                 <p class="text-xs font-medium">${institution}</p>
             </li>
-        `);
+        `) : null;
     });
 
-    const previewList = $('#preview-educations ul');
+    const previewList = $('.preview-educations ul');
     previewList.empty();
     educations.forEach(education => {
         previewList.append(`${education}`);
@@ -135,19 +142,19 @@ function addReference() {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Nom</label>
-                    <input type="text" name="reference-name" id="reference-name" placeholder="Nom..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="reference-name" placeholder="Nom..." class="reference-name mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Poste</label>
-                    <input type="text" name="reference-position" id="reference-position" placeholder="Poste..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="reference-position" placeholder="Poste..." class="reference-position mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" name="reference-email" id="reference-email" placeholder="Email..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="email" name="reference-email" placeholder="Email..." class="reference-email mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Téléphone</label>
-                    <input type="tel" name="reference-phone" id="reference-phone" placeholder="Téléphone..." class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="tel" name="reference-phone" placeholder="Téléphone..." class="reference-phone mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
             </div>
             <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeReference(this)">Supprimer</button>
@@ -170,17 +177,17 @@ function updatePreviewReferences() {
         const referencePosition = $(this).find('input[name="reference-position"]').val();
         const referenceEmail = $(this).find('input[name="reference-email"]').val();
         const referencePhone = $(this).find('input[name="reference-phone"]').val();
-        references.push(`
+        referenceName ? references.push(`
             <li class="space-y-1">
                 <h3 class="text-md font-medium">${referenceName}</h3>
                 <p class="text-md">${referencePosition}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:5px; width:20px;"></i> ${referenceEmail}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:5px; width:20px;"></i> ${referencePhone}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:5px; width:15px;" /> ${referenceEmail}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:5px; width:15px;" /> ${referencePhone}</p>
             </li>
-        `);
+        `): null;
     });
 
-    const previewList = $('#preview-references ul');
+    const previewList = $('.preview-references ul');
     previewList.empty();
     references.forEach(reference => {
         previewList.append(`${reference}`);
@@ -195,11 +202,12 @@ function addSkill() {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Compétence</label>
-                    <input type="text" name="skill-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="skill-name" class="skill-name mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Niveau de Maîtrise</label>
-                    <select value="" name="skill-level" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <select value="" name="skill-level" class="skill-level mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                        <option value=""></option>
                         <option value="Débutant">Débutant</option>
                         <option value="Intermédiaire">Intermédiaire</option>
                         <option value="Avancé">Avancé</option>
@@ -226,13 +234,13 @@ function updatePreviewSkills() {
         const skillLevel = $(this).find('select[name="skill-level"]').val();
         switch (skillLevel) {
             case "Débutant":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress progress-warning w-32 bg-white" value="40" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="40" max="100"></progress></li>`);
                 break;
             case "Intermédiaire":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress progress-warning w-32 bg-white" value="70" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="70" max="100"></progress></li>`);
                 break;
             case "Avancé":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress progress-warning w-32 bg-white" value="100" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="100" max="100"></progress></li>`);
                 break;
         
             default:
@@ -240,7 +248,7 @@ function updatePreviewSkills() {
         }
     });
 
-    const previewList = $('#preview-skills ul');
+    const previewList = $('.preview-skills ul');
     previewList.empty();
     skills.forEach(skill => {
         previewList.append(`${skill}`);
@@ -251,8 +259,8 @@ function updatePreviewSkills() {
 function addInterest() {
     const interests = document.getElementById('interests');
     const newInterest = `
-        <div class="interest mb-4">
-            <input type="text" name="interest" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+        <div class="interest-item mb-4">
+            <input type="text" name="interest" class="interest mt-1 block w-full p-2 border border-gray-300 rounded-xl">
             <button type="button" class="mt-2 text-red-500 hover:text-red-700" onclick="removeInterest(this)">Supprimer</button>
         </div>
     `;
@@ -262,18 +270,18 @@ function addInterest() {
 
 // Supprimer un centre d'intérêt
 function removeInterest(button) {
-    button.closest('.interest').remove();
+    button.closest('.interest-item').remove();
     updatePreviewInterests();
 }
 
 function updatePreviewInterests() {
     const interests = [];
-    $('#interests .interest').each(function() {
+    $('#interests .interest-item').each(function() {
         const interest = $(this).find('input[name="interest"]').val();
         interests.push(`${interest}`);
     });
 
-    const previewList = $('#preview-interests div');
+    const previewList = $('.preview-interests div');
     previewList.empty();
     previewList.append(`${interests.join(', ')}`);
 }
@@ -286,11 +294,12 @@ function addLanguage() {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Langue</label>
-                    <input type="text" name="language-name" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <input type="text" name="language-name" class="language-name mt-1 block w-full p-2 border border-gray-300 rounded-xl">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Niveau de Compétence</label>
-                    <select value="" name="language-level" class="mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                    <select value="" name="language-level" class="language-level mt-1 block w-full p-2 border border-gray-300 rounded-xl">
+                        <option value=""></option>
                         <option value="Débutant">Débutant</option>
                         <option value="Intermédiaire">Intermédiaire</option>
                         <option value="Avancé">Avancé</option>
@@ -317,13 +326,13 @@ function updatePreviewLanguages() {
         const languageLevel = $(this).find('select[name="language-level"]').val();
         switch (languageLevel) {
             case "Débutant":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress progress-warning w-32 bg-white" value="40" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="40" max="100"></progress></li>`);
                 break;
             case "Intermédiaire":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress progress-warning w-32 bg-white" value="70" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="70" max="100"></progress></li>`);
                 break;
             case "Avancé":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress progress-warning w-32 bg-white" value="100" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="100" max="100"></progress></li>`);
                 break;
         
             default:
@@ -331,7 +340,7 @@ function updatePreviewLanguages() {
         }
     });
 
-    const previewList = $('#preview-languages ul');
+    const previewList = $('.preview-languages ul');
     previewList.empty();
     languages.forEach(language => {
         previewList.append(`${language}`);
@@ -340,25 +349,45 @@ function updatePreviewLanguages() {
 
 
 $(document).ready(function () {
-    // Utilisez JavaScript pour appliquer le thème sélectionné à la prévisualisation 
+    // Utilisez JavaScript pour appliquer le thème sélectionné à la prévisualisation
+
     $('#theme-selector').on('change', function () {
-        const cvPreview = $('#cv-preview');
-        cvPreview.removeClass(); // Réinitialise les classes
-        cvPreview.addClass($(this).val()); // Applique le nouveau thème
+        const modeleClassic = $('#modele-classic');
+        modeleClassic.removeClass(); // Réinitialise les classes
+        modeleClassic.addClass($(this).val()); // Applique le nouveau thème
     });
 
     function previewData() {
         // Ajouter les champs de prévisualisations
-        $('#full-name').val() && $('#preview-name').text($('#full-name').val());
-        $('#job-title').val() && $('#preview-job-title').text($('#job-title').val());
-        $('#email').val() && $('#preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:5px; width:20px;"></i> ${$('#email').val()}`);
-        $('#phone').val() && $('#preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:20px;"></i> ${$('#phone').val()}`);
-        $('#address').val() && $('#preview-address').html(`<img src="./assets/map.svg" style="color:#fff; margin-right:5px; width:20px;"></i> ${$('#address').val()}`);
-        $('#summary').val() && $('#preview-summary').text($('#summary').val());
+        $('.full-name').val() ? $('.preview-name').text($('.full-name').val()) : null ;
+        $('.job-title').val() ? $('.preview-job-title').text($('.job-title').val()) : null;
+        
+        if ($('.email').val()) {
+            $('.preview-email').removeClass('hidden');
+            $('.preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.email').val()}`);
+        } else {
+            $('.preview-email').addClass('hidden');
+        }
+        
+        if ($('.phone').val()) {
+            $('.preview-phone').removeClass('hidden');
+            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.phone').val()}`)
+        } else {
+            $('.preview-phone').addClass('hidden');
+        }
+        
+        if ($('.address').val()) {
+            $('.preview-address').removeClass('hidden');
+            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:15px;" /> ${$('.phone').val()}`)
+        } else {
+            $('.preview-address').addClass('hidden');
+        }
+        
+        $('.summary').val() ? $('.preview-summary').text($('.summary').val()) : null;
 
-        $('#gender').val() && $('#preview-gender').html(`Sexe : ${$('#gender').val()}`);
-        $('#age').val() && $('#preview-age').html(`âge : ${$('#age').val()} ans`);
-        $('#current-situation').val() && $('#preview-current-situation').html(`${$('#current-situation').val()}`);
+        // $('.gender').val() && $('#preview-gender').html(`Sexe : ${$('.gender').val()}`);
+        // $('.age').val() && $('#preview-age').html(`âge : ${$('.age').val()} ans`);
+        $('.current-situation').val() ? $('#preview-current-situation').html(`${$('.current-situation').val()}`) : null;
 
         updatePreviewExperiences();
         updatePreviewEducations();
@@ -381,14 +410,14 @@ $(document).ready(function () {
 
             // Lorsque le fichier est lu avec succès
             reader.onload = function (e) {
-                $('#preview-profil') // Sélectionner l'élément img
+                $('.preview-profil') // Sélectionner l'élément img
                     .attr('src', e.target.result) // Mettre à jour l'attribut src avec l'URL de l'image
                     .removeClass('hidden'); // Afficher l'élément img
             };
 
             reader.readAsDataURL(file); // Lire le fichier en tant qu'URL de données
         } else {
-            $('#preview-profil').addClass('hidden'); // Masquer l'élément img si aucun fichier n'est sélectionné
+            $('.preview-profil').addClass('hidden'); // Masquer l'élément img si aucun fichier n'est sélectionné
         }
     });
 
@@ -397,38 +426,38 @@ $(document).ready(function () {
         const cvData = JSON.parse(localStorage.getItem('cvData'));
         if (cvData) {
             // Mettez à jour la prévisualisation ici
-            $('#full-name').val(cvData.full_name);
-            $('#job-title').val(cvData.jobTitle);
-            $('#email').val(cvData.email);
-            $('#phone').val(cvData.phone);
-            $('#age').val(cvData.age);
-            $('#gender').val(cvData.gender);
-            $('#current-situation').val(cvData.current_situation);
-            $('#address').val(cvData.address);
-            $('#summary').val(cvData.summary);
+            $('.full-name').val(cvData.full_name);
+            $('.job-title').val(cvData.jobTitle);
+            $('.email').val(cvData.email);
+            $('.phone').val(cvData.phone);
+            $('.age').val(cvData.age);
+            $('.gender').val(cvData.gender);
+            $('.current-situation').val(cvData.current_situation);
+            $('.address').val(cvData.address);
+            $('.summary').val(cvData.summary);
 
-            $('#company-name').val(cvData.company_name);
-            $('#job-position').val(cvData.job_position);
-            $('#date-job-begin').val(cvData.date_job_begin);
-            $('#date-job-end').val(cvData.date_job_end);
-            $('#job-mission').val(cvData.job_mission);
+            $('.company-name').val(cvData.company_name);
+            $('.job-position').val(cvData.job_position);
+            $('.date-job-begin').val(cvData.date_job_begin);
+            $('.date-job-end').val(cvData.date_job_end);
+            $('.job-mission').val(cvData.job_mission);
 
-            $('#degree').val(cvData.degree);
-            $('#institution').val(cvData.institution);
-            $('#year').val(cvData.year);
+            $('.degree').val(cvData.degree);
+            $('.institution').val(cvData.institution);
+            $('.year').val(cvData.year);
 
-            $('#skill-name').val(cvData.skill_name);
-            $('#skill-level').val(cvData.skill_level);
+            $('.skill-name').val(cvData.skill_name);
+            $('.skill-level').val(cvData.skill_level);
 
-            $('#interest').val(cvData.interest);
+            $('.interest').val(cvData.interest);
 
-            $('#reference-name').val(cvData.reference_name);
-            $('#reference-position').val(cvData.reference_position);
-            $('#reference-email').val(cvData.reference_email);
-            $('#reference-phone').val(cvData.reference_phone);
+            $('.reference-name').val(cvData.reference_name);
+            $('.reference-position').val(cvData.reference_position);
+            $('.reference-email').val(cvData.reference_email);
+            $('.reference-phone').val(cvData.reference_phone);
 
-            $('#language-name').val(cvData.language_name);
-            $('#language-level').val(cvData.language_level);
+            $('.language-name').val(cvData.language_name);
+            $('.language-level').val(cvData.language_level);
         }
     }
 
