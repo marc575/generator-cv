@@ -35,6 +35,10 @@ body {
     font-family: roboto, poppins, montserrat;
 }
 
+a:hover {
+    color: #3498db;
+}
+
 .is-invalid {
     border-color: red;
     background-color: #ffe6e6;

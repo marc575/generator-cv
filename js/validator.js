@@ -1,5 +1,3 @@
-console.log(localStorage.getItem('cvData'));
-
 function deleteData() {
     localStorage.removeItem('cvData');
     window.location.reload();

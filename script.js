@@ -387,7 +387,7 @@ $(document).ready(function () {
         
         if ($('.address').val()) {
             $('.preview-address').removeClass('hidden');
-            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.phone').val()}`)
+            $('.preview-address').html(`<img src="./assets/map.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.address').val()}`)
         } else {
             $('.preview-address').addClass('hidden');
         }
@@ -396,6 +396,7 @@ $(document).ready(function () {
 
         // $('.gender').val() && $('#preview-gender').html(`Sexe : ${$('.gender').val()}`);
         // $('.age').val() && $('#preview-age').html(`âge : ${$('.age').val()} ans`);
+        
         $('.current-situation').val() ? $('#preview-current-situation').html(`${$('.current-situation').val()}`) : null;
 
         updatePreviewExperiences();
