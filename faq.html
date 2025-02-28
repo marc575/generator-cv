@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>FAQ</title>
+</head>
+<body>
+    <header class="flex justify-between items-center pt-1 bg-white px-20">
+        <div>
+            <img src="./assets/logo.jpg" alt="" class="w-24 h-16">
+        </div>
+        <div>
+            <ul class="flex justify-center gap-10 font-semibold">
+                <li> <a href="./accueil.html"> Accueil </a> </li> 
+                <li> <a href="./index.html">  Modele gratuit </a> </li> 
+                <li> <a href="./prix.html">  Prix </a></li> 
+                <li> <a href="./faq.html"> FAQ </a> </li> 
+            </ul>
+        </div>
+        <div class="flex justify-center gap-6">
+            <a class="w-24 h-8 border-2 border-solid border-black rounded-md text-center" type="button" href="./connexion.html">Connexion</a>
+            <a class="w-24 h-8  bg-blue-500 text-white rounded-md text-center" type="button" href="./index.html">Creer un CV</a>
+        </div>
+    </header>
+    <main class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+            <h1 class="text-2xl font-bold text-center mb-6">FAQ</h1>
+            <div class="space-y-4">
+                <!-- Question 2 -->
+                <div class="border-b pb-4">
+                    <button onclick="toggleAnswer('answer2')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
+                        Qu'est-ce qu'un CV ?
+                    </button>
+                    <p id="answer2" class="mt-2 text-gray-600 hidden">
+                        CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
+                        <br>Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
+                        <br>Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                        Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !
+                    </p>
+                </div>
+    
+                <!-- Question 3 -->
+                <div class="border-b pb-4">
+                    <button onclick="toggleAnswer('answer3')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
+                        Que mettre dans un CV ?
+                    </button>
+                    <p id="answer3" class="mt-2 text-gray-600 hidden">
+                        CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
+                        <br>Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
+                        <br>Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                        <br>Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !    
+                    </p>
+                </div>
+    
+                <!-- Question 4 -->
+                <div class="border-b pb-4">
+                    <button onclick="toggleAnswer('answer4')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
+                        Comment changer mon modèle ?
+                    </button>
+                    <p id="answer4" class="mt-2 text-gray-600 hidden">
+                        Vous pouvez changer de modèle en sélectionnant un nouveau modèle dans la section « Modèles » de votre tableau de bord.
+                    </p>
+                </div>
+    
+                <!-- Question 5 -->
+                <div class="border-b pb-4">
+                    <button onclick="toggleAnswer('answer5')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
+                        Comment importer un CV ?
+                    </button>
+                    <p id="answer5" class="mt-2 text-gray-600 hidden">
+                        Vous pouvez importer un CV en cliquant sur le bouton « Importer » dans la section « Mes Documents ».
+                    </p>
+                </div>
+    
+                <!-- Question 6 -->
+                <div class="border-b pb-4">
+                    <button onclick="toggleAnswer('answer6')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
+                        Comment puis-je ajouter ou supprimer une photo ?
+                    </button>
+                    <p id="answer6" class="mt-2 text-gray-600 hidden">
+                        Vous pouvez ajouter ou supprimer une photo en accédant à la section « Profil » de votre compte.
+                    </p>
+                </div>
+            </div>
+    </main>
+    <footer class="bg-white">
+        <div class="py-6 mx-16">
+            <div class="flex justify-around items-start gap-10">
+                <div>
+                    <h3 class="font-semibold mb-3">Ressources</h3>
+                    <p>Conseils</p>
+                    <p>Exemples</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Produit</h3>
+                    <p>Prix</p>
+                    <p>Modeles</p>
+                    <p>Avis</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Service Client</h3>
+                    <p>FAQ</p>
+                    <p>Contact</p>
+                    <p>Condition generales</p>
+                    <p>Politique de confidentialite</p>
+                    <p>A Propos</p>
+                </div>
+                <div class="grid gap-3 rounded-lg ">
+                    <img src="./assets/app-store.png" alt="" class="max-w-24 max-h-auto">
+                    <img src="./assets/google-play.png" alt="" class="max-w-24 max-h-auto">
+                </div>
+            </div>
+            <div class="flex justify-center py-16">
+                <img src="./assets/reseau-sociaux.png" alt="" class="max-w-24 max-h-auto">
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            answer.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -13,9 +13,10 @@
         </div>
         <div>
             <ul class="flex justify-center gap-10 font-semibold">
+                <li> <a href="./accueil.html"> Accueil</a> </li> 
                 <li> <a href="./index.html"> Modele gratuit </a> </li> 
                 <li> <a href="./prix.html"> Prix </a></li> 
-                <li> <a href=""> FAQ </a> </li> 
+                <li> <a href="./faq.html"> FAQ </a> </li> 
             </ul>
         </div>
         <div class="flex justify-center gap-6">
@@ -91,13 +92,13 @@
             let priceText = '';
             switch (selectedOption) {
                 case 'monthly':
-                    priceText = '14,99 US$ / mois';
+                    priceText = '5000 fcfa / mois';
                     break;
                 case 'quarterly':
-                    priceText = '39,99 US$ / trimestre';
+                    priceText = '12000 fcfa / trimestre';
                     break;
                 case 'annual':
-                    priceText = '149,99 US$ / an';
+                    priceText = '10000 fcfa / an';
                     break;
             }
             this.options[this.selectedIndex].text = priceText;
