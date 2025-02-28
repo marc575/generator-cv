@@ -67,11 +67,16 @@ function updatePreviewExperiences() {
         `) : null;
     });
 
-    const previewList = $('.preview-experiences ul');
-    previewList.empty();
-    experiences.forEach(experience => {
-        previewList.append(`${experience}`);
-    });
+    if (experiences.length > 0) {
+        $('.preview-experiences').removeClass('hidden');
+        const previewList = $('.preview-experiences ul');
+        previewList.empty();
+        experiences.forEach(experience => {
+            previewList.append(`${experience}`);
+        });
+    } else {
+        $('.preview-experiences').addClass('hidden');
+    }
 }
 
 // Ajouter une formation
@@ -127,11 +132,16 @@ function updatePreviewEducations() {
         `) : null;
     });
 
-    const previewList = $('.preview-educations ul');
-    previewList.empty();
-    educations.forEach(education => {
-        previewList.append(`${education}`);
-    });
+    if (educations.length > 0) {
+        $('.preview-educations').removeClass('hidden');
+        const previewList = $('.preview-educations ul');
+        previewList.empty();
+        educations.forEach(education => {
+            previewList.append(`${education}`);
+        });
+    } else {
+        $('.preview-educations').addClass('hidden');
+    }
 }
 
 // Ajouter une référence
@@ -187,11 +197,16 @@ function updatePreviewReferences() {
         `): null;
     });
 
-    const previewList = $('.preview-references ul');
-    previewList.empty();
-    references.forEach(reference => {
-        previewList.append(`${reference}`);
-    });
+    if (references.length > 0) {
+        $('.preview-references').removeClass('hidden');
+        const previewList = $('.preview-references ul');
+        previewList.empty();
+        references.forEach(reference => {
+            previewList.append(`${reference}`);
+        });
+    } else {
+        $('.preview-references').addClass('hidden');
+    }
 }
 
 // Ajouter une compétence
@@ -247,12 +262,17 @@ function updatePreviewSkills() {
                 break;
         }
     });
-
-    const previewList = $('.preview-skills ul');
-    previewList.empty();
-    skills.forEach(skill => {
-        previewList.append(`${skill}`);
-    });
+    
+    if (skills.length > 0) {
+        $('.preview-skills').removeClass('hidden');
+        const previewList = $('.preview-skills ul');
+        previewList.empty();
+        skills.forEach(skill => {
+            previewList.append(`${skill}`);
+        });
+    } else {
+        $('.preview-skills').addClass('hidden');
+    }
 }
 
 // Ajouter un centre d'intérêt
@@ -281,9 +301,14 @@ function updatePreviewInterests() {
         interests.push(`${interest}`);
     });
 
-    const previewList = $('.preview-interests div');
-    previewList.empty();
-    previewList.append(`${interests.join(', ')}`);
+    if (interests.length > 0) {
+        $('.preview-interests').removeClass('hidden');
+        const previewList = $('.preview-interests div');
+        previewList.empty();
+        previewList.append(`${interests.join(', ')}`);
+    } else {
+        $('.preview-interests').addClass('hidden');
+    }
 }
 
 // Ajouter une langue
@@ -340,11 +365,16 @@ function updatePreviewLanguages() {
         }
     });
 
-    const previewList = $('.preview-languages ul');
-    previewList.empty();
-    languages.forEach(language => {
-        previewList.append(`${language}`);
-    });
+    if (languages.length > 0) {
+        $('.preview-languages').removeClass('hidden');
+        const previewList = $('.preview-languages ul');
+        previewList.empty();
+        languages.forEach(language => {
+            previewList.append(`${language}`);
+        });
+    } else {
+        $('.preview-languages').addClass('hidden');
+    }
 }
 
 
@@ -369,7 +399,10 @@ $(document).ready(function () {
     function previewData() {
         // Ajouter les champs de prévisualisations
         $('.full-name').val() ? $('.preview-name').text($('.full-name').val()) : null ;
+        $.trim($('.full-name').val()) === "" ? $('.preview-name').addClass('hidden') : $('.preview-name').removeClass('hidden');
+
         $('.job-title').val() ? $('.preview-job-title').text($('.job-title').val()) : null;
+        $.trim($('.job-title').val()) === "" ? $('.preview-job-title').addClass('hidden') : $('.preview-job-title').removeClass('hidden');
         
         if ($('.email').val()) {
             $('.preview-email').removeClass('hidden');
@@ -391,13 +424,18 @@ $(document).ready(function () {
         } else {
             $('.preview-address').addClass('hidden');
         }
+
+        if ($.trim($('.email').val()) === ""  && $.trim($('.phone').val())  === "" && $.trim($('.address').val())  === "") {
+            $('.contact').addClass('hidden');
+        } else {
+            $('.contact').removeClass('hidden');
+        }
         
         $('.summary').val() ? $('.preview-summary').text($('.summary').val()) : null;
-
-        // $('.gender').val() && $('#preview-gender').html(`Sexe : ${$('.gender').val()}`);
-        // $('.age').val() && $('#preview-age').html(`âge : ${$('.age').val()} ans`);
+        $.trim($('.summary').val()) === "" ? $('.profil').addClass('hidden') : $('.profil').removeClass('hidden');
 
         $('.current-situation').val() ? $('.preview-current-situation').html(`${$('.current-situation').val()}`) : null;
+        $.trim($('.current-situation').val()) === "" ? $('.preview-current-situation').addClass('hidden') : $('.preview-current-situation').removeClass('hidden');
 
         updatePreviewExperiences();
         updatePreviewEducations();
