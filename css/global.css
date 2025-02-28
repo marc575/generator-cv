@@ -39,6 +39,11 @@ a:hover {
     color: #3498db;
 }
 
+.progress {
+    color: #ffbe00;
+    background-color: #fff;
+}
+
 .is-invalid {
     border-color: red;
     background-color: #ffe6e6;

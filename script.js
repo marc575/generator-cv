@@ -181,8 +181,8 @@ function updatePreviewReferences() {
             <li class="space-y-2">
                 <h3 class="text-md font-medium">${referenceName}</h3>
                 <p class="text-xs">${referencePosition}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:5px; width:12px;" /> ${referenceEmail}</p>
-                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:5px; width:12px;" /> ${referencePhone}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/envelope.svg" style="margin-right:0px; width:12px;" /> ${referenceEmail}</p>
+                <p class="text-xs flex items-center gap-2"><img src="./assets/tel.svg" style="margin-right:0px; width:12px;" /> ${referencePhone}</p>
             </li>
         `): null;
     });
@@ -234,13 +234,13 @@ function updatePreviewSkills() {
         const skillLevel = $(this).find('select[name="skill-level"]').val();
         switch (skillLevel) {
             case "Débutant":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="40" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress w-32" value="40" max="100"></progress></li>`);
                 break;
             case "Intermédiaire":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="70" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress w-32" value="70" max="100"></progress></li>`);
                 break;
             case "Avancé":
-                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="100" max="100"></progress></li>`);
+                skills.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${skillName}</span> <progress class="progress w-32" value="100" max="100"></progress></li>`);
                 break;
         
             default:
@@ -326,13 +326,13 @@ function updatePreviewLanguages() {
         const languageLevel = $(this).find('select[name="language-level"]').val();
         switch (languageLevel) {
             case "Débutant":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="40" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress w-32" value="40" max="100"></progress></li>`);
                 break;
             case "Intermédiaire":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="70" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress w-32" value="70" max="100"></progress></li>`);
                 break;
             case "Avancé":
-                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress text-yellow-400 w-32 bg-white" value="100" max="100"></progress></li>`);
+                languages.push(`<li class="flex justify-between items-center"><span class="text-md font-medium">${languageName}</span> <progress class="progress w-32" value="100" max="100"></progress></li>`);
                 break;
         
             default:
@@ -373,21 +373,21 @@ $(document).ready(function () {
         
         if ($('.email').val()) {
             $('.preview-email').removeClass('hidden');
-            $('.preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.email').val()}`);
+            $('.preview-email').html(`<img src="./assets/envelope.svg" style="color:#fff; margin-right:0px; width:12px;" /> ${$('.email').val()}`);
         } else {
             $('.preview-email').addClass('hidden');
         }
         
         if ($('.phone').val()) {
             $('.preview-phone').removeClass('hidden');
-            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.phone').val()}`)
+            $('.preview-phone').html(`<img src="./assets/tel.svg" style="color:#fff; margin-right:0px; width:12px;" /> ${$('.phone').val()}`)
         } else {
             $('.preview-phone').addClass('hidden');
         }
         
         if ($('.address').val()) {
             $('.preview-address').removeClass('hidden');
-            $('.preview-address').html(`<img src="./assets/map.svg" style="color:#fff; margin-right:5px; width:12px;" /> ${$('.address').val()}`)
+            $('.preview-address').html(`<img src="./assets/map.svg" style="color:#fff; margin-right:0px; width:12px;" /> ${$('.address').val()}`)
         } else {
             $('.preview-address').addClass('hidden');
         }
@@ -396,8 +396,8 @@ $(document).ready(function () {
 
         // $('.gender').val() && $('#preview-gender').html(`Sexe : ${$('.gender').val()}`);
         // $('.age').val() && $('#preview-age').html(`âge : ${$('.age').val()} ans`);
-        
-        $('.current-situation').val() ? $('#preview-current-situation').html(`${$('.current-situation').val()}`) : null;
+
+        $('.current-situation').val() ? $('.preview-current-situation').html(`${$('.current-situation').val()}`) : null;
 
         updatePreviewExperiences();
         updatePreviewEducations();
