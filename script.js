@@ -383,21 +383,45 @@ $(document).ready(function () {
 
     $('#theme-selector').on('change', function () {
         const modeleClassic = $('#modele-classic');
-        modeleClassic.removeClass(); // Réinitialise les classes
+        modeleClassic.removeClass(function (index, className) {
+            return (className.match(/\btheme\S+/g) || []).join(' ');
+        }); // Réinitialise les classes
         modeleClassic.addClass($(this).val()); // Applique le nouveau thème
 
         const modelePro = $('#modele-pro');
-        modelePro.removeClass(); // Réinitialise les classes
+        modelePro.removeClass(function (index, className) {
+            return (className.match(/\btheme\S+/g) || []).join(' ');
+        }); // Réinitialise les classes
         modelePro.addClass($(this).val()); // Applique le nouveau thème
-
         
         const modelePremium = $('#modele-premium');
-        modelePremium.removeClass(); // Réinitialise les classes
+        modelePremium.removeClass(function (index, className) {
+            return (className.match(/\btheme\S+/g) || []).join(' ');
+        }); // Réinitialise les classes
         modelePremium.addClass($(this).val()); // Applique le nouveau thème
     });
 
     function previewData() {
         // Ajouter les champs de prévisualisations
+        switch ($('#modele-selector').val()) {
+            case "modele-pro":
+                $('#modele-pro').removeClass('hidden');
+                $('#modele-premium').addClass('hidden');
+                $('#modele-classic').addClass('hidden');
+                break;
+            case "modele-premium":
+                $('#modele-premium').removeClass('hidden');
+                $('#modele-pro').addClass('hidden');
+                $('#modele-classic').addClass('hidden');
+                break;
+        
+            default:
+                $('#modele-premium').addClass('hidden');
+                $('#modele-pro').addClass('hidden');
+                $('#modele-classic').removeClass('hidden');
+                break;
+        }
+        
         $('.full-name').val() ? $('.preview-name').text($('.full-name').val()) : null ;
         $.trim($('.full-name').val()) === "" ? $('.preview-name').addClass('hidden') : $('.preview-name').removeClass('hidden');
 

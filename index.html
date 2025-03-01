@@ -14,16 +14,14 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./css/global.css"> 
 </head>
-<body class="max-h-screen">
+<body>
     <header class="flex justify-between items-center pt-1 bg-white px-20">
         <div>
             <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
         </div>
         <div>
-            <ul class="flex justify-center gap-10 font-semibold">
-                <li> <a href="./index.html"> Modele Classique </a> </li> 
-                <li> <a href="./modelepro.html"> Modele Professionnel </a> </li> 
-                <li> <a href="./modelepremium.html"> Modele Premium </a> </li> 
+            <ul class="flex justify-center gap-5 font-semibold">
+                <li> <a href="./index.html"> Modèles</a> </li>  
                 <li> <a href="./prix.html"> Prix </a></li> 
                 <li> <a href="./faq.html"> FAQ </a> </li> 
             </ul>
@@ -43,6 +41,12 @@
                         <option value="theme-classic">Thème Classique</option>
                         <option value="theme-modern">Thème Moderne</option>
                         <option value="theme-minimalist">Thème Minimaliste</option>
+                    </select>
+
+                    <select value="" id="modele-selector" title="modele-selector" class="mt-1 mb-5 block w-full p-2 border border-gray-300 rounded-xl">
+                        <option value="modele-classic">Modèle Classique</option>
+                        <option value="modele-pro">Modèle Professionnel</option>
+                        <option value="modele-premium">Modèle Premium</option>
                     </select>
 
                     <!-- Informations Personnelles -->
@@ -308,72 +312,219 @@
             </div>
             <div class="w-full md:w-1/2">
                 <!-- Prévisualisation ici -->
-                <div id="cv-preview" >
+                <div id="cv-preview">
                     <!-- Modèle classique -->
                     <div id="modele-classic" class="theme-classic">
-
-                        <div class="information space-y-4">
-                            <div class="space-y-2">
-                                <img src="#" alt="Prévisualisation de la photo de profil" class="preview-profil mt-2 w-24 h-24 rounded-full object-cover mx-auto hidden">
-                                <h1 class="preview-name text-md font-semibold uppercase text-center"></h1>
-                                <h4 class="preview-job-title text-sm font-medium uppercase text-center"></h4>
-                                <p class="preview-current-situation text-sm font-medium uppercase text-center"></p>
+                        <div class="modele-classic">
+                            <div class="information space-y-4">
+                                <div class="space-y-2">
+                                    <img src="#" alt="Prévisualisation de la photo de profil" class="preview-profil border-4 border-white mt-2 w-24 h-24 rounded-full object-cover mx-auto hidden">
+                                    <h1 class="preview-name text-md font-semibold uppercase text-center"></h1>
+                                    <h4 class="preview-job-title text-sm font-medium uppercase text-center"></h4>
+                                    <p class="preview-current-situation text-sm font-medium uppercase text-center"></p>
+                                </div>
+        
+                                <div class="space-y-2">
+                                    <h2 class="h2 contact bg-white ml-3 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Contact</h2>
+                                    <p class="preview-phone text-xs mx-5 flex items-center gap-2"></p>
+                                    <p class="preview-email text-xs mx-5 flex items-center gap-2"></p>
+                                    <p class="preview-address text-xs mx-5 flex items-center gap-2"></p>
+                                </div>
+        
+                                <div class="preview-skills space-y-2">
+                                    <h2 class="h2 bg-white ml-3 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Compétences</h2>
+                                    <ul class="text-sm ml-5 space-y-2 mr-2">
+                                        <!-- liste des compétences -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-languages space-y-2">
+                                    <h2 class="h2 bg-white ml-3 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Langues</h2>
+                                    <ul class="text-sm ml-5 space-y-2 mr-2">
+                                        <!-- liste des langues -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-interests space-y-2">
+                                    <h2 class="h2 bg-white ml-3 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Centres d'intéret</h2>
+                                    <div class="text-sm ml-5">
+                                        <!-- liste des centres d'intérêt -->
+                                    </div>
+                                </div>
+                                <!-- Ajouter la suite ici -->
                             </div>
-    
-                            <div class="space-y-2">
-                                <h2 class="h2 contact bg-white ml-5 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Contact</h2>
-                                <p class="preview-phone text-sm ml-10 flex items-center gap-2"></p>
-                                <p class="preview-email text-sm ml-10 flex items-center gap-2"></p>
-                                <p class="preview-address text-sm ml-10 flex items-center gap-2"></p>
-                            </div>
-    
-                            <div class="preview-skills space-y-2">
-                                <h2 class="h2 bg-white ml-5 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Compétences</h2>
-                                <ul class="text-sm ml-10 space-y-2 mr-2">
-                                    <!-- liste des compétences -->
-                                </ul>
-                            </div>
-    
-                            <div class="preview-languages space-y-2">
-                                <h2 class="h2 bg-white ml-5 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Langues</h2>
-                                <ul class="text-sm ml-10 space-y-2 mr-2">
-                                    <!-- liste des langues -->
-                                </ul>
-                            </div>
-    
-                            <div class="preview-interests space-y-2">
-                                <h2 class="h2 bg-white ml-5 text-center uppercase font-semibold rounded-l-3xl my-5 py-2">Centres d'intéret</h2>
-                                <div class="text-sm ml-10">
-                                    <!-- liste des centres d'intérêt -->
+                            <div class="experience space-y-4">
+                                <div class="space-y-2">
+                                    <h2 class="h2 profil uppercase font-bold my-5 py-2 border-b-2">Profil</h2>
+                                    <p class="preview-summary text-xs"></p>
+                                </div>
+        
+                                <div class="preview-experiences space-y-2">
+                                    <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">Expériences professionnelles</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des expériences professionnelles -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-educations space-y-2">
+                                    <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">éducation</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des formations -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-references space-y-2">
+                                    <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">Références</h2>
+                                    <ul class="grid grid-cols-2 gap-2">
+                                        <!-- liste des références -->
+                                    </ul>
                                 </div>
                             </div>
-                            <!-- Ajouter la suite ici -->
+
                         </div>
-                        <div class="experience space-y-4">
-                            <div class="space-y-2">
-                                <h2 class="h2 profil uppercase font-bold my-5 py-2 border-b-2">Profil</h2>
-                                <p class="preview-summary text-xs"></p>
-                            </div>
+                    </div>
+                    
+                    <!-- Modèle Professionnel -->
+                    <div id="modele-pro" class="theme-classic hidden">
+                        <div class="modele-pro">
+                            <div class="information space-y-4 shadow-lg">
+                                <div class="space-y-4">
+                                    <img src="#" alt="Prévisualisation de la photo de profil" class="preview-profil border-4 border-white mt-2 w-24 h-24 rounded-full object-cover mx-auto hidden">
+                                    <h4 class="mx-3 text-center profil text-white uppercase font-semibold my-5 py-2 border-t-2 border-b-2">Profil</h4>
+                                    <p class="preview-summary text-xs mx-3"></p>
+                                </div>
+        
+                                <div class="space-y-2">
+                                    <h4 class="mx-3 text-center contact text-white uppercase font-semibold my-5 py-2 border-t-2 border-b-2">Contact</h4>
+                                    <p class="preview-phone text-xs mx-3 flex items-center gap-2"></p>
+                                    <p class="preview-email text-xs mx-3 flex items-center gap-2"></p>
+                                    <p class="preview-address text-xs mx-3 flex items-center gap-2"></p>
+                                </div>
     
-                            <div class="preview-experiences space-y-2">
-                                <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">Expériences professionnelles</h2>
-                                <ul class="space-y-4">
-                                    <!-- liste des expériences professionnelles -->
-                                </ul>
+                                <div class="preview-skills space-y-2">
+                                    <h4 class="mx-3 text-center text-white uppercase font-semibold my-5 py-2 border-t-2 border-b-2">Compétences</h4>
+                                    <ul class="text-xs mx-3 space-y-2">
+                                        <!-- liste des compétences -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-languages space-y-2">
+                                    <h4 class="mx-3 text-center text-white uppercase font-semibold my-5 py-2 border-t-2 border-b-2">Langues</h4>
+                                    <ul class="text-xs mx-3 space-y-2">
+                                        <!-- liste des langues -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-interests space-y-2">
+                                    <h4 class="mx-3 text-center text-white uppercase font-semibold my-5 py-2 border-t-2 border-b-2">Centres d'intéret</h4>
+                                    <div class="text-xs mx-3">
+                                        <!-- liste des centres d'intérêt -->
+                                    </div>
+                                </div>
+                                <!-- Ajouter la suite ici -->
                             </div>
-    
-                            <div class="preview-educations space-y-2">
-                                <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">Formations</h2>
-                                <ul class="space-y-4">
-                                    <!-- liste des formations -->
-                                </ul>
+                            <div class="experience space-y-4">
+                                <div class="space-y-1">
+                                    <h2 class="preview-name text-2xl font-extrabold uppercase"></h2>
+                                    <h4 class="preview-job-title text-xs font-medium uppercase"></h4>
+                                </div>
+        
+                                <div class="preview-experiences space-y-2">
+                                    <h2 class="h2 uppercase w-1/2 font-bold my-5 py-2 border-b-2 border-t-2">Expériences</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des expériences professionnelles -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-educations space-y-2">
+                                    <h2 class="h2 uppercase w-1/2 font-bold my-5 py-2 border-b-2 border-t-2">éducation</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des formations -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-references space-y-2">
+                                    <h2 class="h2 uppercase w-1/2 font-bold my-5 py-2 border-b-2 border-t-2">Références</h2>
+                                    <ul class="grid grid-cols-2 gap-2">
+                                        <!-- liste des références -->
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Modèle premium -->
+                    <div id="modele-premium" class="theme-classic hidden">
+                        <div class="information text-end">
+                            <div class="space-y-1">
+                                <h4 class="preview-name text-2xl font-extrabold uppercase pr-10"></h4>
+                                <h4 class="preview-job-title text-xs font-medium uppercase pr-10"></h4>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-5">
+                            <div class="experience w-2/5 space-y-6 shadow relative" style="background-color: #f5f5f5;">
+                                <div class="space-y-4">
+                                    <img src="#" alt="Prévisualisation de la photo de profil" class="preview-profil absolute -top-14 left-8 mt-2 w-24 h-24 rounded-full object-cover border-4 border-white mx-auto hidden">
+                                    
+                                </div>
+        
+                                <div class="space-y-2">
+                                    <h2 class="mx-3 contact uppercase font-semibold my-5 py-2 border-b-2">Contact</h2>
+                                    <p class="preview-phone text-xs mx-3 flex items-center gap-2"></p>
+                                    <p class="preview-email text-xs mx-3 flex items-center gap-2"></p>
+                                    <p class="preview-address text-xs mx-3 flex items-center gap-2"></p>
+                                </div>
     
-                            <div class="preview-references space-y-2">
-                                <h2 class="h2 uppercase font-bold my-5 py-2 border-b-2">Références</h2>
-                                <ul class="grid grid-cols-2 gap-2">
-                                    <!-- liste des références -->
-                                </ul>
+                                <div class="preview-skills space-y-2">
+                                    <h2 class="mx-3 uppercase font-semibold my-5 py-2 border-b-2">Compétences</h2>
+                                    <ul class="text-xs mx-3 space-y-2">
+                                        <!-- liste des compétences -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-languages space-y-2">
+                                    <h2 class="mx-3 uppercase font-semibold my-5 py-2 border-b-2">Langues</h2>
+                                    <ul class="text-xs mx-3 space-y-2">
+                                        <!-- liste des langues -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-references space-y-2">
+                                    <h2 class="h2 uppercase font-semibold m-5 py-2 border-b-2">Références</h2>
+                                    <ul class="space-y-2 mx-3">
+                                        <!-- liste des références -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-interests space-y-2">
+                                    <h2 class="mx-3 uppercase font-semibold my-5 py-2 border-b-2">Intérets</h4>
+                                    <div class="text-xs mx-3">
+                                        <!-- liste des centres d'intérêt -->
+                                    </div>
+                                </div>
+                                <!-- Ajouter la suite ici -->
+                            </div>
+                            <div class="experience w-3/5 space-y-4">
+                                <div class="space-y-4">
+                                    <h2 class="uppercase profil font-semibold my-5 py-2 border-b-2">Profil</h2>
+                                    <p class="preview-summary text-xs"></p>
+                                </div>
+        
+                                <div class="preview-experiences space-y-2">
+                                    <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">Expériences</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des expériences professionnelles -->
+                                    </ul>
+                                </div>
+        
+                                <div class="preview-educations space-y-2">
+                                    <h2 class="h2 uppercase font-semibold my-5 py-2 border-b-2">éducation</h2>
+                                    <ul class="space-y-4">
+                                        <!-- liste des formations -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
