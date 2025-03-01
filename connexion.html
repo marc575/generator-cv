@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css/global.css"> 
     <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
     <title>Connexion</title>
 </head>
 <body>
-    <header class="flex justify-between items-center pt-1 bg-white px-20">
-        <div>
-            <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
-        </div>
-        <div>
-            <ul class="flex justify-center gap-5 font-semibold">
-                <li> <a href="./index.html"> Modèles</a> </li>  
-                <li> <a href="./prix.html"> Prix </a></li> 
-                <li> <a href="./faq.html"> FAQ </a> </li> 
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <li><a href="./index.html"> Modèles</a></li>
+              <li> <a href="./prix.html"> Prix </a></li>
+              <li><a href="./faq.html"> FAQ </a></li>
             </ul>
+          </div>
+          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
         </div>
-        <div class="flex justify-center gap-6">
-            <a class="w-24 h-8 border-2 border-solid border-black rounded-md text-center" type="button" href="./connexion.html">Connexion</a>
-            <a class="w-24 h-8  bg-blue-500 text-white rounded-md text-center" type="button" href="./index.html">Creer un CV</a>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="./index.html"> Modèles</a></li>
+            <li><li> <a href="./prix.html"> Prix </a></li></li>
+            <li><a href="./faq.html"> FAQ </a></li>
+          </ul>
         </div>
-    </header>
+        <div class="navbar-end">
+            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Creer un CV</a>
+        </div>
+    </div> 
     <main class="bg-gray-100 flex items-center justify-center h-screen">
         <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
             <h1 class="text-2xl font-bold text-center mb-6">Connexion</h1>
@@ -41,40 +57,26 @@
             <p class="text-center text-gray-600 mt-4">Pas encore de compte ? <a href="#" class="text-blue-500 hover:underline">Inscrivez-vous</a></p>
         </div>
     </main>
-    <footer class="bg-white">
-        <div class="py-6 mx-16">
-            <div class="flex justify-around items-start gap-10">
-                <div>
-                    <h3 class="font-semibold mb-3">Ressources</h3>
-                    <p>Conseils</p>
-                    <p>Exemples</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-3">Produit</h3>
-                    <p>Prix</p>
-                    <p>Modeles</p>
-                    <p>Avis</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-3">Service Client</h3>
-                    <p>FAQ</p>
-                    <p>Contact</p>
-                    <p>Condition generales</p>
-                    <p>Politique de confidentialite</p>
-                    <p>A Propos</p>
-                </div>
-                <div class="grid gap-3 rounded-lg ">
-                    <img src="./assets/app-store.png" alt="" class="max-w-24 max-h-auto">
-                    <img src="./assets/google-play.png" alt="" class="max-w-24 max-h-auto">
-                </div>
-            </div>
-            <div class="flex justify-center py-16">
-                <img src="./assets/reseau-sociaux.png" alt="" class="max-w-24 max-h-auto">
-            </div>
-            <div>
-
-            </div>
-        </div>
+    <footer class="footer sm:footer-horizontal bg-gray-100 text-[#242424] p-10">
+        <nav>
+          <h6 class="footer-title">Ressources</h6>
+          <a class="link link-hover">Conseils</a>
+          <a class="link link-hover">Exemples</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Produit</h6>
+          <a class="link link-hover">Prix</a>
+          <a class="link link-hover">Modeles</a>
+          <a class="link link-hover">Avis</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Service Client</h6>
+          <a class="link link-hover">FAQ</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Condition generales</a>
+          <a class="link link-hover">Politique de confidentialite</a>
+          <a class="link link-hover">A Propos</a>
+        </nav>
     </footer>
 
     <script>
