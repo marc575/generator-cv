@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
 </head>
 <body>
-    <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar bg-base-100 border-b container mx-auto px-4 md:px-0">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -27,25 +27,25 @@
               <li><a href="./faq.html"> FAQ </a></li>
             </ul>
           </div>
-          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
+          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" width="30"></a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
             <li><a href="./index.html"> Modèles</a></li>
-            <li><li> <a href="./prix.html"> Prix </a></li></li>
+            <li><a href="./prix.html"> Prix </a></li>
             <li><a href="./faq.html"> FAQ </a></li>
           </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Creer un CV</a>
+            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Créer un CV</a>
         </div>
     </div> 
-    <main class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+    <main class="bg-white flex items-center justify-center min-h-screen">
+        <div class="max-w-2xl w-full">
             <h1 class="text-2xl font-bold text-center mb-6">FAQ</h1>
             <div class="space-y-4">
                 <!-- Question 2 -->
-                <div class="border-b pb-4">
+                <div class="p-4 rounded-xl shadow-md">
                     <button onclick="toggleAnswer('answer2')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
                         Qu'est-ce qu'un CV ?
                     </button>
@@ -58,7 +58,7 @@
                 </div>
     
                 <!-- Question 3 -->
-                <div class="border-b pb-4">
+                <div class="p-4 rounded-xl shadow-md">
                     <button onclick="toggleAnswer('answer3')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
                         Que mettre dans un CV ?
                     </button>
@@ -71,7 +71,7 @@
                 </div>
     
                 <!-- Question 4 -->
-                <div class="border-b pb-4">
+                <div class="p-4 rounded-xl shadow-md">
                     <button onclick="toggleAnswer('answer4')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
                         Comment changer mon modèle ?
                     </button>
@@ -81,7 +81,7 @@
                 </div>
     
                 <!-- Question 5 -->
-                <div class="border-b pb-4">
+                <div class="p-4 rounded-xl shadow-md">
                     <button onclick="toggleAnswer('answer5')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
                         Comment importer un CV ?
                     </button>
@@ -91,7 +91,7 @@
                 </div>
     
                 <!-- Question 6 -->
-                <div class="border-b pb-4">
+                <div class="p-4 rounded-xl shadow-md">
                     <button onclick="toggleAnswer('answer6')" class="w-full text-left font-semibold text-gray-700 hover:text-blue-500 focus:outline-none">
                         Comment puis-je ajouter ou supprimer une photo ?
                     </button>
@@ -101,7 +101,8 @@
                 </div>
             </div>
     </main>
-    <footer class="footer sm:footer-horizontal bg-gray-100 text-[#242424] p-10">
+    
+    <footer class="footer sm:footer-horizontal bg-[#F5F5F5] text-[#242424] p-10 md:p-20">
         <nav>
           <h6 class="footer-title">Ressources</h6>
           <a class="link link-hover">Conseils</a>
@@ -122,6 +123,16 @@
           <a class="link link-hover">A Propos</a>
         </nav>
     </footer>
+
+    <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+        <aside>
+          <p>Copyright © 2025 - CV Online | Tout droits reservés !</p>
+        </aside>
+    </footer>
+    
+    <div class="container cta-section">
+        <a href="https://wa.me/237656450734" class="cta-link"><img src="assets/icons/whatsapp.svg" alt=""></a>
+    </div>
 
     <script>
         function toggleAnswer(id) {

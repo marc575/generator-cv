@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/global.css"> 
 </head>
 <body>
-    <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar bg-base-100 border-b container mx-auto px-4 md:px-0">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -29,19 +29,19 @@
               <li><a href="./faq.html"> FAQ </a></li>
             </ul>
           </div>
-          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
+          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" width="30"></a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
             <li><a href="./index.html"> Modèles</a></li>
-            <li><li> <a href="./prix.html"> Prix </a></li></li>
+            <li><a href="./prix.html"> Prix </a></li>
             <li><a href="./faq.html"> FAQ </a></li>
           </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Creer un CV</a>
+            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Créer un CV</a>
         </div>
-    </div>  
+    </div> 
 
     <div class="container mx-auto py-10 relative px-5">
         <div class="flex flex-col md:flex-row gap-10">
@@ -474,8 +474,8 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row gap-5">
-                            <div class="experience w-2/5 space-y-6 shadow relative" style="background-color: #f5f5f5;">
+                        <div class="modele-premium">
+                            <div class="experience space-y-4 shadow relative bg-[#f5f5f5]" >
                                 <div class="space-y-4">
                                     <img src="#" alt="Prévisualisation de la photo de profil" class="preview-profil absolute -top-14 left-8 mt-2 w-24 h-24 rounded-full object-cover border-4 border-white mx-auto hidden">
                                     
@@ -517,7 +517,7 @@
                                 </div>
                                 <!-- Ajouter la suite ici -->
                             </div>
-                            <div class="experience w-3/5 space-y-4">
+                            <div class="experience space-y-4">
                                 <div class="space-y-4">
                                     <h2 class="uppercase profil font-semibold my-5 py-2 border-b-2">Profil</h2>
                                     <p class="preview-summary text-xs"></p>
@@ -544,7 +544,9 @@
         </div>
     </div>
 
-    <footer class="footer sm:footer-horizontal bg-gray-100 text-[#242424] p-10">
+    
+    
+    <footer class="footer sm:footer-horizontal bg-[#F5F5F5] text-[#242424] p-10 md:p-20">
         <nav>
           <h6 class="footer-title">Ressources</h6>
           <a class="link link-hover">Conseils</a>
@@ -565,6 +567,16 @@
           <a class="link link-hover">A Propos</a>
         </nav>
     </footer>
+  
+    <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+        <aside>
+          <p>Copyright © 2025 - CV Online | Tout droits reservés !</p>
+        </aside>
+    </footer>
+
+    <div class="container cta-section">
+        <a href="https://wa.me/237656450734" class="cta-link"><img src="assets/icons/whatsapp.svg" alt=""></a>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="./js/jquery.min.js"></script>

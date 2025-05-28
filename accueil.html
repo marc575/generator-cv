@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,10 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./css/global.css"> 
     <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <title>Accueil</title>
+    <title>CV Online | Accueil</title>
 </head>
 <body>
-    <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar bg-base-100 border-b container mx-auto px-4 md:px-0">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -30,42 +27,42 @@
               <li><a href="./faq.html"> FAQ </a></li>
             </ul>
           </div>
-          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" class="w-24 h-24"></a>
+          <a href="./accueil.html"> <img src="./assets/logo.jpg" alt="logo" width="30"></a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
             <li><a href="./index.html"> Modèles</a></li>
-            <li><li> <a href="./prix.html"> Prix </a></li></li>
+            <li><a href="./prix.html"> Prix </a></li>
             <li><a href="./faq.html"> FAQ </a></li>
           </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Creer un CV</a>
+            <a class="btn  btn-primary rounded-xl" type="button" href="./index.html">Créer un CV</a>
         </div>
     </div> 
         <main>
-            <section class="flex justify-center my-16 bg-gray-100 px-20">
+            <section class="flex justify-center mb-16 bg-gray-100 p-20">
                 <div class="grid grid-cols-1 text-center gap-6">
                     <h1 class="text-5xl font-semibold"> Créez votre CV professionnel </h1>
                     <p class="text-lg  font-sm "> Remplissez le formulaire, choisissez un modèle et téléchargez 
                         <br>votre CV en quelques minutes.</p>
                     <div>
-                        <a class="w-24 h-10  bg-blue-500 text-white rounded-md p-3" type="button" href="./index.html">Creer un CV</a>
+                        <a class="btn btn-primary" type="button" href="./index.html">Créer un CV</a>
                     </div>
                 </div>
             </section>
 
             <section>
-                <div class="pl-10">
-                    <div class="flex max-w-96 max-h-auto gap-2 ">
-                        <img src="./assets/cv1.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv2.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv3.svg" alt="" class="rounded-lg"> 
-                    </div>
-                    <div>
-                        <button> Utiliser ce modele </button>
-                    </div>
-                </div>
+                <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3"
+                    space-between="30" free-mode="true">
+                    <swiper-slide><img src="./assets/cv1.svg" alt="cv" ></swiper-slide>
+                    <swiper-slide><img src="./assets/cv2.svg" alt="cv" ></swiper-slide>
+                    <swiper-slide><img src="./assets/cv3.svg" alt="cv" > </swiper-slide>
+                    <swiper-slide><img src="./assets/cv4.svg" alt="cv" ></swiper-slide>
+                    <swiper-slide><img src="./assets/cv5.svg" alt="cv" ></swiper-slide>
+                    <swiper-slide><img src="./assets/cv6.svg" alt="cv" ></swiper-slide>
+                    <swiper-slide><img src="./assets/cv7.svg" alt="cv" ></swiper-slide>
+                </swiper-container>
             </section>
 
             <section class="bg-white px-24 my-16">
@@ -88,7 +85,7 @@
                                 <img src="./assets/img2.png" alt="" class="max-w-12 max-h-auto">
                             </div>
                             <div>
-                                <h2 class="mb-2"> choisissez un Modele </h2>
+                                <h2 class="mb-2"> Choisissez un Modele </h2>
                                 <p> Choisissez un modele de CV et personnalisez le en fonction de votre personnalité et style.</p>
                             </div>
                         </div>
@@ -97,20 +94,20 @@
                                 <img src="./assets/img3.png" alt="" class="max-w-12 max-h-auto">
                             </div>
                             <div>
-                                <h2 class="mb-2"> Telecharger le CV </h2>
-                                <p> Previsualiser , imprimez ou telechargez votre CV a tout moment. c'est Magnifique!</p>
+                                <h2 class="mb-2"> Télecharger le CV </h2>
+                                <p> Prévisualiser , imprimez ou telechargez votre CV a tout moment. c'est Magnifique!</p>
                             </div>
                         </div>
                     </div>
                     <div class="pt-8 ">
-                        <img src="./assets/dashboard.png" alt="" class="rounded-lg">
+                        <img src="./assets/preview.jpeg" alt="" class="rounded-lg">
                     </div>
                 </div>
             </section>
 
             <section class="bg-white  ">
                 <div class="text-center py-10 font-semibold text-4xl">
-                    <h1>Fonctionnalites</h1>
+                    <h1>Fonctionnalités</h1>
                 </div>
                 <div class="flex justify-center gap-6">
                     <div class="">
@@ -120,7 +117,7 @@
                             </div>
                             <div>
                                 <h2 class="mb-4 font-semibold"> Lettres de Motivation </h2>
-                                <p class="text-start"> ecrivez facilement des lettres de motivations 
+                                <p class="text-start"> Ecrivez facilement des lettres de motivations 
                                     <br>professionnel.</p>
                             </div>
                         </div>
@@ -130,8 +127,8 @@
                             </div>
                             <div>
                                 <h2 class="mb-4 font-semibold"> Offres d'emploi </h2>
-                                <p> SOyez pret a deposer votre CV pour une offre d'emploi  
-                                    <br> a tout moment.</p>
+                                <p> Soyez pret a deposer votre CV pour une offre d'emploi  
+                                    <br> à tout moment.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 my-6">
@@ -139,9 +136,9 @@
                                 <img src="./assets/petit2.png" alt="" class="max-w-12 max-h-auto">
                             </div>
                             <div>
-                                <h2 class="mb-4 font-semibold"> Candidature </h2>
+                                <h2 class="mb-4 font-semibold"> Candidatures </h2>
                                 <p> Organisez toute vos candidatures de 
-                                    <br>maniere claire.</p>
+                                    <br>manière claire.</p>
                             </div>
                         </div>
                     </div>
@@ -152,96 +149,144 @@
             </section>
 
             <section class="bg-white my-4">
-                <div class="text-center py-10 font-semibold text-4xl">
-                    <h2>Foire aux questions</h2>
+                <div class="text-center py-10">
+                  <h2 class="text-4xl font-semibold">Foire aux questions</h2>
                 </div>
-                <div class="grid-cols-1  max-w-2/3 mx-auto" >
+                
+                <div class="max-w-2/3 mx-auto">
+                  <div class="join join-vertical w-full">
+                    <!-- Question 1 -->
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" checked="checked" />
+                      <div class="collapse-title text-xl font-medium">
+                        Qu'est-ce qu'un CV ?
+                      </div>
+                      <div class="collapse-content"> 
+                        <p class="mb-2">
+                          CV (Curriculum Vitae) signifie en latin "carrière de la vie". Une façon poétique de désigner "le dossier comportant l'ensemble des indications concernant l'état civil d'un candidat à un poste, ses diplômes, son expérience professionnelle, etc.", selon la définition du dictionnaire français Larousse.
+                        </p>  
+                        <p class="mb-2">
+                          Élément indispensable de toute recherche d'emploi, le curriculum vitae se doit de renseigner l'employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l'œil des recruteurs !
+                        </p>    
+                        <p class="mb-2">
+                          Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d'atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d'apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                        </p>   
+                        <p class="mb-4">
+                          Bien sûr il n'existe aucune "loi" qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu'un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu'il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l'envoyer à un recruteur, pour être sûr que vous n'avez rien oublié !    
+                        </p>
+                      </div>
+                    </div>
                     
-                    <div class="border-t-1 outline-gray-200">
-                        <h3 class=" font-semibold py-4"> Qu'est-ce qu'un CV ? </h3>
+                    <!-- Question 2 -->
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" />
+                      <div class="collapse-title text-xl font-medium">
+                        Que mettre dans un CV ?
+                      </div>
+                      <div class="collapse-content"> 
                         <p class="mb-2">
-                            CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
+                          CV (Curriculum Vitae) signifie en latin "carrière de la vie". Une façon poétique de désigner "le dossier comportant l'ensemble des indications concernant l'état civil d'un candidat à un poste, ses diplômes, son expérience professionnelle, etc.", selon la définition du dictionnaire français Larousse.
                         </p>  
                         <p class="mb-2">
-                            Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
+                          Élément indispensable de toute recherche d'emploi, le curriculum vitae se doit de renseigner l'employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l'œil des recruteurs !
                         </p>    
                         <p class="mb-2">
-                            Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                          Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d'atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d'apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
                         </p>   
                         <p class="mb-4">
-                            Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !    
+                          Bien sûr il n'existe aucune "loi" qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu'un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu'il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l'envoyer à un recruteur, pour être sûr que vous n'avez rien oublié !    
                         </p>
+                      </div>
                     </div>
-                    <div class="border-t-1 outline-gray-200">
-                        <h3 class=" font-semibold py-4"> Que mettre dans un CV ? </h3>
+                    
+                    <!-- Question 3 -->
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" />
+                      <div class="collapse-title text-xl font-medium">
+                        Comment faire un CV ?
+                      </div>
+                      <div class="collapse-content"> 
                         <p class="mb-2">
-                            CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
+                          CV (Curriculum Vitae) signifie en latin "carrière de la vie". Une façon poétique de désigner "le dossier comportant l'ensemble des indications concernant l'état civil d'un candidat à un poste, ses diplômes, son expérience professionnelle, etc.", selon la définition du dictionnaire français Larousse.
                         </p>  
                         <p class="mb-2">
-                            Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
+                          Élément indispensable de toute recherche d'emploi, le curriculum vitae se doit de renseigner l'employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l'œil des recruteurs !
                         </p>    
                         <p class="mb-2">
-                            Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                          Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d'atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d'apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
                         </p>   
                         <p class="mb-4">
-                            Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !    
+                          Bien sûr il n'existe aucune "loi" qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu'un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu'il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l'envoyer à un recruteur, pour être sûr que vous n'avez rien oublié !    
                         </p>
+                      </div>
                     </div>
-                    <div class="border-t-1 outline-gray-200 ">
-                        <h2 class="font-semibold py-4"> Comment faire un CV ? </h2>
+                    
+                    <!-- Question 4 -->
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" />
+                      <div class="collapse-title text-xl font-medium">
+                        Comment faire un bon CV ?
+                      </div>
+                      <div class="collapse-content"> 
                         <p class="mb-2">
-                            CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
+                          CV (Curriculum Vitae) signifie en latin "carrière de la vie". Une façon poétique de désigner "le dossier comportant l'ensemble des indications concernant l'état civil d'un candidat à un poste, ses diplômes, son expérience professionnelle, etc.", selon la définition du dictionnaire français Larousse.
                         </p>  
                         <p class="mb-2">
-                            Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
+                          Élément indispensable de toute recherche d'emploi, le curriculum vitae se doit de renseigner l'employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l'œil des recruteurs !
                         </p>    
                         <p class="mb-2">
-                            Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
+                          Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d'atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d'apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
                         </p>   
                         <p class="mb-4">
-                            Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !    
+                          Bien sûr il n'existe aucune "loi" qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu'un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu'il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l'envoyer à un recruteur, pour être sûr que vous n'avez rien oublié !    
                         </p>
+                      </div>
                     </div>
-                    <div class="border-y-1 outline-gray-200">
-                        <h2 class=" font-semibold py-4"> Comment faire un bon CV ? </h2>
-                        <p class="mb-2">
-                            CV (Curriculum Vitae) signifie en latin “carrière de la vie”. Une façon poétique de désigner “le dossier comportant l’ensemble des indications concernant l’état civil d’un candidat à un poste, ses diplômes, son expérience professionnelle, etc.”, selon la définition du dictionnaire français Larousse.
-                        </p>  
-                        <p class="mb-2">
-                            Élément indispensable de toute recherche d’emploi, le curriculum vitae se doit de renseigner l’employeur sur votre profil, vos compétences et et votre parcours. Et face à la concurrence des nombreux candidats qui postulent aux mêmes emplois, il est important de savoir faire un CV attractif pour sortir du lot et attirer l’œil des recruteurs !
-                        </p>    
-                        <p class="mb-2">
-                            Le but premier du CV est de mettre en avant vos qualités, compétences, et atouts et d’atténuer le plus possible vos points faibles ou accidents de parcours. En effet, le curriculum vitae doit montrer le meilleur de votre personnalité et de vos compétences afin d’apparaître comme le candidat idéal aux yeux des recruteurs ! Il doit donc donner une image positive de votre candidature.
-                        </p>   
-                        <p class="mb-4">
-                            Bien sûr il n’existe aucune “loi” qui vous oblige à avoir un CV, mais décrocher un job sans en avoir un est quasiment mission impossible ! Même si quelqu’un vous recommande à un recruteur, par exemple, celui-ci vous demandera certainement votre CV pour se faire une idée de votre parcours et de vos compétences. Avoir un CV est donc absolument indispensable ! Pensez également à garder votre CV à jour afin qu’il contienne toujours vos dernières expériences professionnelles ou formations. Il est donc important de toujours le relire avant de l’envoyer à un recruteur, pour être sûr que vous n’avez rien oublié !    
-                        </p>
-                    </div>
-                    <p class="my-4"> vous avez des questions, consultez notre <a href=""> FAQ </a></p>
+                  </div>
+                  
+                  <p class="my-4 text-center">
+                    Vous avez des questions ? Consultez notre <a href="#" class="link link-primary">FAQ complète</a>
+                  </p>
                 </div>
             </section>
 
-            <section class="">
-                <div class="justify-center flex items-center gap-10">
+            <section class="my-10 max-h-screen overflow-y-hidden flex justify-center">
+                <div class="justify-center flex items-center gap-32">
                     <div class="items-start">
-                        <h2 class="text-center py-10 font-semibold text-4xl">Faire un CV en ligne</h2>
+                        <h2 class="py-10 font-semibold text-4xl">Faire un CV en ligne</h2>
                         <p class="pb-4">Télécharger simple et facile un CV professionnel en 
                             <br>quelques minutes</p>
-                        <a class="w-24 h-10  bg-blue-500 text-white rounded-md p-3" type="button" href="./index.html">Creer un CV</a>
+                        <a class="btn btn-primary" type="button" href="./index.html">Créer un CV</a>
                     </div>
-                    <div class="grid grid-cols-2 w-80 h-auto gap-4 pb-3">
-                        <img src="./assets/cv1.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv2.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv3.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv4.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv5.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv6.svg" alt="" class="rounded-lg">
-                        <img src="./assets/cv7.svg" alt="" class="rounded-lg">   
+                    <div class="grid grid-cols-2 w-80 h-auto gap-4 pb-3 overflow-hidden">
+                        <!-- Première colonne (animation vers le haut) -->
+                        <div class="col-span-1 space-y-4 animate-scroll-up">
+                          <img src="./assets/cv1.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv3.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv5.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv7.svg" alt="" class="rounded-lg">
+                          <!-- Duplication pour l'effet de boucle continu -->
+                          <img src="./assets/cv1.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv3.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv5.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv7.svg" alt="" class="rounded-lg">
+                        </div>
+                        
+                        <!-- Deuxième colonne (animation vers le bas) -->
+                        <div class="col-span-1 space-y-4 animate-scroll-down">
+                          <img src="./assets/cv2.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv4.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv6.svg" alt="" class="rounded-lg">
+                          <!-- Duplication pour l'effet de boucle continu -->
+                          <img src="./assets/cv2.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv4.svg" alt="" class="rounded-lg">
+                          <img src="./assets/cv6.svg" alt="" class="rounded-lg">
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer class="footer sm:footer-horizontal bg-gray-100 text-[#242424] p-10">
+        <footer class="footer sm:footer-horizontal bg-[#F5F5F5] text-[#242424] p-10 md:p-20">
             <nav>
               <h6 class="footer-title">Ressources</h6>
               <a class="link link-hover">Conseils</a>
@@ -262,6 +307,18 @@
               <a class="link link-hover">A Propos</a>
             </nav>
         </footer>
+
+        <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+            <aside>
+              <p>Copyright © 2025 - CV Online | Tout droits reservés !</p>
+            </aside>
+        </footer>
     </div>
+
+    <div class="container cta-section">
+        <a href="https://wa.me/237656450734" class="cta-link"><img src="assets/icons/whatsapp.svg" alt=""></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>
